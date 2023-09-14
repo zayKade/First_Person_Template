@@ -1,0 +1,89 @@
+[gd_scene load_steps=10 format=3 uid="uid://bk21h43m7g5mp"]
+
+[ext_resource type="Script" path="res://_Assets/_Script/pausemenu.gd" id="1_1j5v3"]
+[ext_resource type="FontFile" uid="uid://tskn14f2x8pc" path="res://_Assets/_Fonts/BebasNeue-Regular.ttf" id="2_8v3ve"]
+[ext_resource type="AudioStream" uid="uid://celbnlc8f5p6w" path="res://_Music/mainMenumusic.mp3" id="3_rwtv8"]
+
+[sub_resource type="Theme" id="Theme_fo3wp"]
+Button/styles/normal = null
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1i3c6"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 150
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vvigv"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 150
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flmsv"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 150
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2cdh3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tcyx5"]
+
+[node name="pausemenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1j5v3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0352941, 0.0156863, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.141
+anchor_right = 0.283
+anchor_bottom = 0.137
+offset_left = 0.567993
+offset_right = -0.0160217
+offset_bottom = 0.223991
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_8v3ve")
+theme_override_font_sizes/font_size = 71
+text = "PAUSED"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+anchor_top = 0.341
+anchor_right = 0.193
+anchor_bottom = 0.409
+offset_top = 0.0319824
+offset_right = -0.335999
+offset_bottom = -0.0320129
+theme = SubResource("Theme_fo3wp")
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8v3ve")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_1i3c6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vvigv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_flmsv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_2cdh3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tcyx5")
+text = "RESUME"
+
+[node name="mainMenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rwtv8")
+volume_db = -14.28
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

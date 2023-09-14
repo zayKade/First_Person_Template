@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhmpqwmcxgpaq"]
+
+[ext_resource type="Script" path="res://_Assets/_Script/PlayerController.gd" id="1_4mph1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_303p0"]
+
+[node name="PlayerController" type="CharacterBody3D" groups=["player"]]
+script = ExtResource("1_4mph1")
+
+[node name="colider" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_303p0")
+
+[node name="hand" type="Node3D" parent="."]
+transform = Transform3D(1.03031, 0, 0, 0, 1.03031, 0, 0, 0, 1.03031, 0.666409, 0.394483, -1.69308)
+
+[node name="pivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412356, -0.168593)
+
+[node name="eyes" type="Camera3D" parent="pivot"]
+near = 0.001
+
+[node name="hand" type="RayCast3D" parent="pivot"]
+transform = Transform3D(1, 0, 0, 0, -0.900797, -0.434241, 0, 0.434241, -0.900797, 0, 0, -0.38676)
+target_position = Vector3(0, -1, 2.125)
+debug_shape_thickness = 5
+
+[node name="Headcollison checker" type="RayCast3D" parent="pivot"]
+transform = Transform3D(1, 0, 0, 0, -0.999873, -0.0159691, 0, 0.0159691, -0.999873, 0, -0.0826445, 0.177552)
+debug_shape_thickness = 5

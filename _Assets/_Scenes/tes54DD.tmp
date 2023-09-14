@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://5divouw3lbk4"]
+
+[ext_resource type="PackedScene" uid="uid://ce7oxx1edjh8l" path="res://_Assets/_GLBS/scene/testlevel.tscn" id="1_urlil"]
+[ext_resource type="PackedScene" uid="uid://dhmpqwmcxgpaq" path="res://_Assets/_Scenes/player_controller.tscn" id="2_u45jt"]
+[ext_resource type="Script" path="res://_Assets/_Script/pausemenu.gd" id="3_3xsux"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nkleb"]
+sky_top_color = Color(0.588235, 0.72549, 0.890196, 1)
+sky_horizon_color = Color(0.0862745, 0.741176, 0.784314, 1)
+
+[sub_resource type="Sky" id="Sky_jy6si"]
+sky_material = SubResource("ProceduralSkyMaterial_nkleb")
+
+[sub_resource type="Environment" id="Environment_vehb2"]
+background_mode = 2
+sky = SubResource("Sky_jy6si")
+ssao_enabled = true
+sdfgi_enabled = true
+sdfgi_bounce_feedback = 0.9
+
+[node name="TestArena" type="Node3D"]
+
+[node name="sky shit" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vehb2")
+
+[node name="testlevel" parent="." instance=ExtResource("1_urlil")]
+transform = Transform3D(1.64087, 0, 0, 0, 1.64087, 0, 0, 0, 1.64087, 3, 0, 33)
+
+[node name="PlayerController" parent="." instance=ExtResource("2_u45jt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51277, 1.80609, 39.724)
+
+[node name="pausemenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_3xsux")

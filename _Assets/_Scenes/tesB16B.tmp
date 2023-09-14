@@ -1,0 +1,98 @@
+[gd_scene load_steps=15 format=3 uid="uid://5divouw3lbk4"]
+
+[ext_resource type="Material" uid="uid://bxomm7p027q4q" path="res://_Assets/_Mats/Testfloor.tres" id="2_4f15l"]
+[ext_resource type="PackedScene" uid="uid://dhmpqwmcxgpaq" path="res://_Assets/_Scenes/player_controller.tscn" id="2_u45jt"]
+[ext_resource type="PackedScene" uid="uid://cq7ax67ghx644" path="res://_Assets/_Scenes/fleshlight.tscn" id="3_rj64y"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nkleb"]
+
+[sub_resource type="Sky" id="Sky_jy6si"]
+sky_material = SubResource("ProceduralSkyMaterial_nkleb")
+
+[sub_resource type="Environment" id="Environment_vehb2"]
+background_mode = 2
+sky = SubResource("Sky_jy6si")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uk5xy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_237lk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_c5xvu"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_o05gt"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_c3t8y"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8wpub"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0btbd"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fjlq5"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="TestArena" type="Node3D"]
+
+[node name="sky shit" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vehb2")
+
+[node name="PlayerController" parent="." instance=ExtResource("2_u45jt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.55096, 2.26599)
+
+[node name="floor" type="StaticBody3D" parent="."]
+transform = Transform3D(28.9458, 0, 0, 0, 1.07038, 0, 0, 0, -32.6384, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
+shape = SubResource("BoxShape3D_uk5xy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor/CollisionShape3D"]
+material_override = ExtResource("2_4f15l")
+mesh = SubResource("BoxMesh_237lk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.47252, 0.88132, 0, -0.88132, 0.47252, -1.12617, 10.1614, 7.89393)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.7169, 0, 0, 0, 0.227783, 0, 0, 0, 1, -0.843782, 0.58717, -7.59549)
+mesh = SubResource("BoxMesh_c5xvu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1.00746, 0, 0, 0, 1, 0, 0, 0, 1, 0.00294709, 0.468987, -0.950006)
+mesh = SubResource("BoxMesh_c5xvu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_o05gt")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.918104, 0, 0, 0, 0.568337, 0, 0, 0, 1, -0.0191051, 1.21867, -1.93419)
+mesh = SubResource("BoxMesh_c5xvu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D/MeshInstance3D2"]
+transform = Transform3D(1.00746, 0, 0, 0, 1, 0, 0, 0, 1, 0.00294709, 0.468987, -0.950006)
+mesh = SubResource("BoxMesh_c5xvu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_c3t8y")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.46257, 0.105247, 1.81732, -5.81025)
+mesh = SubResource("PlaneMesh_8wpub")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_0btbd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_fjlq5")
+
+[node name="fleshlight" parent="." instance=ExtResource("3_rj64y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.18159, 1.29877, -13.5394)
