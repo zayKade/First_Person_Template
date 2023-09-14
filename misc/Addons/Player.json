@@ -1,0 +1,5 @@
+{
+  "player_health": 100,
+  "enemy_health": 75,
+  "max_health": 100,
+}
