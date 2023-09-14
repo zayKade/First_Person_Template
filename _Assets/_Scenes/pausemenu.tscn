@@ -87,3 +87,4 @@ stream = ExtResource("3_rwtv8")
 volume_db = -14.28
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="finished" from="mainMenuMusic" to="." method="_on_main_menu_music_finished"]

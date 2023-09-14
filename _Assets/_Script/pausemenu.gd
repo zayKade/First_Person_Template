@@ -35,3 +35,8 @@ func _input(event):
 func _on_button_pressed():
 	get_tree().paused = false
 	pass # Replace with function body.
+
+
+func _on_main_menu_music_finished():
+	$mainMenuMusic.play()
+	pass # Replace with function body.
