@@ -3,7 +3,7 @@ extends CharacterBody3D
 @export var JUMP_VELOCITY : float = 4.5
 @export var fallVELO : int = 9
 @export var crouchingSpeed : float = 2.1
-const ColliderHEIGHT: float = 2.1
+const ColliderHEIGHT: float = 1.6
 const MINHeight : float = 1.5
 const MAXHeight : float = 2
 @export var sprintSPEED : float = 1.9
@@ -40,7 +40,7 @@ func _physics_process(delta):
 	elif Headcollison.is_colliding()  && isCrouching && is_on_floor():
 		crouch(delta)
 	else:
-		BOD.shape.height = lerp(BOD.shape.height,MAXHeight * 2,delta)
+		BOD.shape.height = lerp(BOD.shape.height,MAXHeight * 1.8,delta)
 		isCrouching = false
 	#adds gravity
 	gravtiy(delta)
