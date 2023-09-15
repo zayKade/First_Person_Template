@@ -32,4 +32,3 @@ transform = Transform3D(1.64087, 0, 0, 0, 1.64087, 0, 0, 0, 1.64087, 3, 0, 33)
 
 [node name="PlayerController" parent="." instance=ExtResource("2_u45jt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51277, 1.80609, 39.724)
-crouchingSpeed = 4.56
