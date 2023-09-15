@@ -10,14 +10,14 @@ config_version=5
 
 [application]
 
-config/name="arg"
+config/name="FP_Temp"
 run/main_scene="res://_Assets/_Scenes/test_arena.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 run/max_fps=1000
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="res://icon.svg"
+config/icon="res://ICON.svg"
 
 [display]
 
