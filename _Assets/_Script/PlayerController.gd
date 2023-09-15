@@ -1,10 +1,11 @@
 extends CharacterBody3D
-const SPEED : float = 5.0
-const JUMP_VELOCITY : float = 4.5
-const fallVELO : int = 9
-const crouchingSpeed : float = 2.1
-var crouchHeight : float = 1.5
-var maxHEight : float = 2
+@export var SPEED : float = 5.0
+@export var JUMP_VELOCITY : float = 4.5
+@export var fallVELO : int = 9
+@export var crouchingSpeed : float = 2.1
+const ColliderHEIGHT: float = 2.1
+const crouchHeight : float = 1.5
+const maxHEight : float = 2
 @export var sprintSPEED : float = 1.9
 var isCrouching : bool = false
 var isSprinting : bool = false
@@ -69,7 +70,7 @@ func _physics_process(delta):
 	
 
 func crouch(delta):
-	BOD.shape.height -= crouchingSpeed * delta
+	BOD.shape.height -= ColliderHEIGHT * delta
 	isCrouching = true
 
 func gravtiy(delta):
