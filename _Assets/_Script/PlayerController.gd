@@ -4,8 +4,8 @@ extends CharacterBody3D
 @export var fallVELO : int = 9
 @export var crouchingSpeed : float = 2.1
 const ColliderHEIGHT: float = 2.1
-const crouchHeight : float = 1.5
-const maxHEight : float = 2
+const MINHeight : float = 1.5
+const MAXHeight : float = 2
 @export var sprintSPEED : float = 1.9
 var isCrouching : bool = false
 var isSprinting : bool = false
@@ -34,13 +34,13 @@ func _unhandled_input(event):
 	
 func _physics_process(delta):
 	#crouch code
-	BOD.shape.height = clamp(BOD.shape.height,crouchHeight,maxHEight)
+	BOD.shape.height = clamp(BOD.shape.height,MINHeight,MAXHeight)
 	if Input.is_action_pressed("crouch") && is_on_floor():
 		crouch(delta)
 	elif Headcollison.is_colliding()  && isCrouching && is_on_floor():
 		crouch(delta)
 	else:
-		BOD.shape.height = lerp(BOD.shape.height,maxHEight * 2,delta)
+		BOD.shape.height = lerp(BOD.shape.height,MAXHeight * 2,delta)
 		isCrouching = false
 	#adds gravity
 	gravtiy(delta)
