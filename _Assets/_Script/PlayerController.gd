@@ -27,7 +27,7 @@ func _unhandled_input(event):
 	#mouse look
 	mouse_motion(event)
 	#run code
-	if Input.is_action_pressed('run') && isCrouching == false && is_on_floor():
+	if Input.is_action_pressed('run') && !isCrouching && is_on_floor():
 		isSprinting = true
 	else:
 		isSprinting = false
@@ -79,7 +79,7 @@ func gravtiy(delta):
 	return
 
 func jump():
-	if Input.is_action_just_pressed("jump") && is_on_floor() && isCrouching == false:
+	if Input.is_action_just_pressed("jump") && is_on_floor() && !isCrouching:
 		velocity.y = JUMP_VELOCITY
 	return
 
