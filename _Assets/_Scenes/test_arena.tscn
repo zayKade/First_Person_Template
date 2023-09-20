@@ -19,6 +19,7 @@ sdfgi_enabled = true
 sdfgi_bounce_feedback = 0.9
 
 [node name="TestArena" type="Node3D"]
+transform = Transform3D(1, -0.000131716, 0.000126018, 0.000131783, 1, -0.000619502, -0.000125948, 0.000619516, 1, 0, 0, 0)
 
 [node name="pausemenu" parent="." instance=ExtResource("3_h3y81")]
 mouse_filter = 2
@@ -31,4 +32,4 @@ environment = SubResource("Environment_vehb2")
 transform = Transform3D(1.64087, 0, 0, 0, 1.64087, 0, 0, 0, 1.64087, 0, 0, 0)
 
 [node name="PlayerController" parent="." instance=ExtResource("2_u45jt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77761, 0)
+transform = Transform3D(1, -7.00595e-12, 0, 4.26326e-14, 1, 0, 0, 0, 1, -2.36042e-11, 1.77761, 0)
