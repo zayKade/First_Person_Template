@@ -1,5 +1,6 @@
 extends Control
 func _ready():
+	hide()
 	$ColorRect.modulate.a8 = 120
 func _input(event):
 	if Input.is_key_pressed(KEY_ENTER) && get_tree().paused == true:
