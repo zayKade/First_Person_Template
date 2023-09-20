@@ -14,6 +14,7 @@ var isSprinting : bool = false
 @onready var RayCast : RayCast3D = $pivot/hand
 @onready var BOD : CollisionShape3D = $colider
 @onready var Headcollison : RayCast3D = $"pivot/Headcollison checker"
+@onready var state : Label = $Playerstate
 
 #i put alot of stuff in funcs as the base template was clutterd
 #I did not use the base games gravity as it felt too floaty
@@ -33,12 +34,16 @@ func _unhandled_input(event):
 		isSprinting = false
 	
 func _physics_process(delta):
+	#state code
+	StateMuchine()
 	#crouch code
 	BOD.shape.height = clamp(BOD.shape.height,MINHeight,MAXHeight)
 	if Input.is_action_pressed("crouch") && is_on_floor():
 		crouch(delta)
+		isCrouching = true
 	elif Headcollison.is_colliding()  && isCrouching && is_on_floor():
 		crouch(delta)
+		isCrouching = true
 	else:
 		BOD.shape.height = lerp(BOD.shape.height,MAXHeight * 1.8,delta)
 		isCrouching = false
@@ -61,18 +66,17 @@ func _physics_process(delta):
 	if isSprinting:
 		velocity.x = direction.x * SPEED * sprintSPEED
 		velocity.z = direction.z * SPEED * sprintSPEED
-	if isSprinting == false && isCrouching == false:
+	if !isSprinting && !isCrouching:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	move_and_slide()
-
+	#Tech1WallRun(delta)
 	return
 	
 
 func crouch(delta):
 	BOD.shape.height -= ColliderHEIGHT * delta
 	isCrouching = true
-
 func gravtiy(delta):
 	if not is_on_floor():
 		velocity.y -= delta * fallVELO
@@ -89,6 +93,38 @@ func mouse_motion(event):
 		cam.rotate_x(deg_to_rad(-event.relative.y  * sense));
 		cam.rotation.x = clamp(cam.rotation.x , deg_to_rad(-96), deg_to_rad(50));
 		return;
-	
+		
 
+
+#added wall running but its kind poorly hacked together
+#if you want to ad this shitty wall run uncomment it make a static body put it in group wallrunable wall and boom done
+#func Tech1WallRun(delta):
+	#if Input.is_action_pressed("forward") && is_in_group("wallrunablewall"):
+		#if is_on_wall():
+			#await get_tree().create_timer(0.1).timeout
+			#velocity.y = 0
+			#cam.rotation.z = -150
+			#cam.rotation.x = clamp(cam.rotation.x , deg_to_rad(0), deg_to_rad(0));
+			#return
+	#if !is_on_wall():
+		#cam.rotation.z = 0
+		#cam.rotation.x = clamp(cam.rotation.x , deg_to_rad(-96), deg_to_rad(50));
+			
+	#return
+
+
+func StateMuchine():
+	if isCrouching:
+		state.text = "crouching"
+	elif isSprinting:
+		state.text = "sprinting"
+	elif velocity.y >= 1 && not is_on_floor():
+		state.text = "jumping"
+	elif not is_on_floor():
+		state.text = "falling"
+	elif velocity.x && velocity.z >= 0 or velocity.x && velocity.z <= 0:
+		state.text = "walking"
+	else:
+		state.text = "idle"
+	return
 
