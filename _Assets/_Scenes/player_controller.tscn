@@ -27,3 +27,24 @@ debug_shape_thickness = 5
 [node name="Headcollison checker" type="RayCast3D" parent="pivot"]
 transform = Transform3D(1, 0, 0, 0, -0.999873, -0.0159691, 0, 0.0159691, -0.999873, 0, -0.0826445, 0.177552)
 debug_shape_thickness = 5
+
+[node name="enum" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 0.11
+anchor_bottom = 0.113
+offset_right = -61.72
+offset_bottom = -28.224
+theme_override_font_sizes/font_size = 51
+text = "State:"
+
+[node name="Playerstate" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.079
+anchor_top = 0.002
+anchor_right = 0.11
+anchor_bottom = 0.111
+offset_left = -0.00800323
+offset_top = -0.296
+offset_right = 0.279991
+offset_bottom = -6.92801
+theme_override_font_sizes/font_size = 46
